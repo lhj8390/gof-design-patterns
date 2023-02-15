@@ -2,19 +2,33 @@ package com.lhj8390.creational.abstractFactory;
 
 public class AbstractFactoryDemo {
     public static void main(String[] args) {
-        BaseProductFactory factory = FactoryProducer.getFactory(ProductType.COMPUTER);
-        Product productA = factory.createProduct("LG gram");
-        productA.buy();
-        productA.use();
+        BaseProductFactory samsungFactory = FactoryProducer.getFactory(ProductType.SAMSUNG);
+        BaseProductFactory lgFactory = FactoryProducer.getFactory(ProductType.LG);
 
-        factory = FactoryProducer.getFactory(ProductType.PHONE);
-        Product productB = factory.createProduct("Galaxy S22");
-        productB.buy();
-        productB.use();
+        Computer samsungComputer = samsungFactory.createComputer();
+        samsungComputer.buy();
+        samsungComputer.use();
 
-        factory = FactoryProducer.getFactory(ProductType.TABLET);
-        Product productC = factory.createProduct("갤럭시탭");
-        productC.buy();
-        productC.use();
+        Tablet samsungTablet = samsungFactory.createTablet();
+        samsungTablet.buy();
+        samsungTablet.use();
+
+        Phone samsungPhone = samsungFactory.createPhone();
+        samsungPhone.buy();
+        samsungPhone.use();
+
+
+        Computer lgComputer = lgFactory.createComputer();
+        lgComputer.buy();
+        lgComputer.use();
+
+        Tablet lgTablet = lgFactory.createTablet();
+        lgTablet.buy();
+        lgTablet.use();
+
+        Phone lgPhone = lgFactory.createPhone();
+        lgPhone.buy();
+        lgPhone.use();
+
     }
 }

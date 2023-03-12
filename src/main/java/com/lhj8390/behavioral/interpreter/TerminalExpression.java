@@ -9,7 +9,6 @@ public class TerminalExpression implements Expression {
     }
     @Override
     public boolean interpret(Context context) {
-        System.out.println(context.lookup(data));
         return context.lookup(data);
     }
 }

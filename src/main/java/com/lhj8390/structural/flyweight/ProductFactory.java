@@ -7,9 +7,12 @@ public class ProductFactory {
 
     public static Product getProduct(ProductType type) {
         if (!products.containsKey(type)) {
-            products.put(type, new Product(type));
+            products.put(type, new SharedProduct(type));
         }
         return products.get(type);
     }
 
+    public static Product getProduct(ProductType type, int price) {
+        return new UnsharedProduct(type, price);
+    }
 }

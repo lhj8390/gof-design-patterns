@@ -4,13 +4,13 @@ public class StrategyDemo {
 
     public static void main(String[] args) {
 
-        Payment card = new Payment(PaymentMethod.CARD, 10000);
+        Payment card = new Payment(new CardStrategy(), 10000);
         card.getPoint();
 
-        Payment cash = new Payment(PaymentMethod.CASH, 10000);
+        Payment cash = new Payment(new CashStrategy(), 10000);
         cash.getPoint();
 
-        Payment phone = new Payment(PaymentMethod.PHONE, 10000);
+        Payment phone = new Payment(new PhoneStrategy(), 10000);
         phone.getPoint();
 
     }
